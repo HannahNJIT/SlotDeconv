@@ -406,6 +406,8 @@ class SlotDeconv:
             nn.utils.clip_grad_norm_(model.parameters(),5.0)
             opt.step()
             sch.step()
+        self.slots_=model.slots.detach().cpu().numpy()    
+        self.alpha_=model.alpha_disp().detach().cpu().numpy()
         return model.get_reference_matrix()
     def _deconv_nnls(self, st_df, B_prob, w, pow_w):
         X = st_df.T.values.astype(np.float32)

@@ -46,6 +46,10 @@ def celltype_corr(G, P, eps=1e-12):
         den = np.sqrt(((g - gm) ** 2).sum() * ((p - pm) ** 2).sum()) + eps
         out[k] = num / den
     return out
+def rmse(a,b):
+    a=np.asarray(a,dtype=np.float64)
+    b=np.asarray(b,dtype=np.float64)
+    return float(np.sqrt(np.mean((a-b)**2)))
 def get_valid_types(true_props, cell_types, eps=1e-6):
     """
     Get cell types with non-constant ground truth (std > eps).
@@ -66,7 +70,7 @@ def compute_spot_metrics(G, P, eps=1e-12):
     return dict(
         corr=spotwise_corr(G, P, eps),
         cosine=spotwise_cos(G, P, eps),
-        rmse=np.sqrt(((G - P) ** 2).mean(1)),
+        rmse=rmse(G, P),
         jsd=spotwise_jsd(G, P, eps),
         ae=np.abs(G - P).mean(1)
     )
