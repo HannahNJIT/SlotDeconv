@@ -13,14 +13,14 @@ from scipy.spatial.distance import cdist
 from scipy.optimize import nnls
 warnings.filterwarnings("ignore")
 DEFAULT_CONFIG = {
-    'n_genes': 3000,
+    'n_genes': 2500, # 3000
+    'b_epochs': 2500, #2000
     'max_cells_per_type': 750,
-    'lambda_div': 4.0,
+    'lambda_div': 5.0,   # 4.0
     'margin': 0.1,
-    'lambda_sp': 15.0,
-    'sp_epochs': 1500,
+    'lambda_sp': 10.0, # 15.0
+    'sp_epochs': 500,  # 1500
     'sp_lr': 0.01,
-    'b_epochs': 2000,
     'b_lr': 1e-3,
     'pow_w': 0.8,
     'knn': 15,
