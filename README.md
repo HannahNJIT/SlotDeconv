@@ -12,12 +12,7 @@ This repository contains the model implementation, a command-line runner, exampl
 - `model/run_slot.py`: command-line runner for one dataset directory.
 - `model/slot_utility.py`: data loading, spot alignment, and evaluation metrics.
 - `model/plot.py`, `model/visz.py`: plotting and validation utilities.
-- `experiments/tutorial.ipynb`: tutorial notebook.
-- `experiments/mouse_brain_eccb.ipynb`: mouse brain benchmark analysis used for the ECCB manuscript.
-- `experiments/PDAC_run.ipynb`: PDAC analysis notebook.
-- `experiments/MOB_eccb.ipynb`: mouse olfactory bulb analysis notebook.
-- `experiments/bench_bootstrap.py`: bootstrap and paired-test helper script for benchmark uncertainty.
-- `experiments/generate_supplemental_review_analysis.py`: supplemental negative-PCC and Xenium shared-gene concordance analyses.
+- `tutorial.ipynb`: tutorial notebook.
 - `data/spotifydata_v2/`: example mouse brain benchmark directory in the expected CSV format, when included in the local checkout or downloaded from the data link below.
 
 ## Installation
