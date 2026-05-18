@@ -1,0 +1,19 @@
+name: slotdeconv
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - numpy=1.26
+  - pandas=2.2
+  - scipy=1.13
+  - scikit-learn=1.4
+  - matplotlib=3.8
+  - seaborn=0.13
+  - jupyter
+  - pytorch=2.2
+  # For CUDA support, replace the line above with the appropriate
+  # `pytorch-cuda=<version>` package, e.g.:
+  #   - pytorch-cuda=11.8
+  - pip
