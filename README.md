@@ -1,7 +1,11 @@
 # SlotDeconv
 
 <p align="center">
-  <a href="Fig1_framework.pdf"><strong>Workflow overview (PDF)</strong></a>
+  <img src="framework.png" alt="SlotDeconv workflow overview" width="900">
+</p>
+
+<p align="center">
+  <a href="Fig1_framework.pdf">Workflow overview PDF</a>
 </p>
 
 SlotDeconv is a reference-based spatial transcriptomics deconvolution method for estimating spot-level cell-type proportions from spot-based spatial transcriptomics data. It learns discriminative cell-type signatures from annotated scRNA-seq data using slot-based prototype vectors and a diversity constraint, then estimates proportions with weighted NNLS initialization followed by spatial refinement.
@@ -17,6 +21,7 @@ This repository contains the core model implementation, a command-line runner, a
 - `model/slot_utility.py`: data loading, spot alignment, and evaluation metrics.
 - `model/plot.py`, `model/visz.py`: plotting and validation utilities.
 - `tutorial.ipynb`: tutorial notebook.
+- `framework.png`: workflow overview image displayed in this README.
 - `Fig1_framework.pdf`: workflow overview figure from the manuscript.
 - `requirements.txt`: Python package versions used for the ECCB experiments.
 
@@ -60,6 +65,8 @@ true_props.csv        optional, spots x cell types ground truth for benchmarking
 ```
 
 Spot IDs must match between `st_count.csv` columns and `spatial_location.csv` rows. If `true_props.csv` is present, the same spot IDs are used for evaluation. Gene names are aligned between `sc_count.csv` and `st_count.csv` before fitting.
+
+The CSV input files are stored as genes-by-samples for convenient loading. This file-format convention differs from the manuscript notation, where the corresponding aligned matrices are written as samples-by-genes.
 
 ## Quick Start
 
@@ -110,7 +117,7 @@ Public source datasets used in the manuscript:
 - Human pancreatic ductal adenocarcinoma spatial transcriptomics: Moncada et al., GEO GSE111672, <https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE111672>
 - Mouse olfactory bulb scRNA-seq reference: GEO GSE121891, <https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE121891>
 
-The processed mouse brain benchmark is referred to here as the VX benchmark data. The raw processed files are distributed through the data folder rather than stored in this repository because the count matrices are several gigabytes.
+The processed mouse brain benchmark is referred to here as the VX benchmark data. The processed count matrices are distributed through the data folder rather than stored in this repository because they are several gigabytes in size.
 
 ## Citation
 
@@ -119,7 +126,8 @@ If you use SlotDeconv, please cite:
 ```text
 Fang H, Qi C, Zou Y, Chen Y, Wei Z. SlotDeconv: Spatial Transcriptomics
 Deconvolution via Diversity-Constrained Prototype Learning and Spatial
-Refinement. ECCB 2026 Proceedings Track / Bioinformatics, 2026.
+Refinement. Accepted to the ECCB 2026 Proceedings Track and for inclusion
+in the Bioinformatics proceedings, pending OUP editorial checks.
 ```
 
 ## Contact
