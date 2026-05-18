@@ -4,9 +4,6 @@
   <img src="framework.png" alt="SlotDeconv workflow overview" width="900">
 </p>
 
-<p align="center">
-  <a href="Fig1_framework.pdf">Workflow overview PDF</a>
-</p>
 
 SlotDeconv is a reference-based spatial transcriptomics deconvolution method for estimating spot-level cell-type proportions from spot-based spatial transcriptomics data. It learns discriminative cell-type signatures from annotated scRNA-seq data using slot-based prototype vectors and a diversity constraint, then estimates proportions with weighted NNLS initialization followed by spatial refinement.
 
